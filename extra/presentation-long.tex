@@ -1,0 +1,455 @@
+\documentclass[aspectratio=169,10pt]{beamer}
+\usepackage{fontspec}
+\usepackage{assets/ako-beamer}
+\hypersetup{colorlinks=true,urlcolor=AKORed}
+\newcommand{\Gfun}{G}
+
+\begin{document}
+
+% 1
+\begin{frame}[plain]
+\vspace{.6cm}{\color{AKORed}\large\bfseries REPOSITORY 04 · EXTENDED DECK}\par\vspace{.35cm}
+{\usebeamerfont{title}\color{AKONavy}AI, Human Cognition and\\Knowledge Collapse}\par\vspace{.35cm}
+{\large Acemoglu, Kong \& Ozdaglar (2026)}\par\vspace{.65cm}
+\begin{tikzpicture}\draw[AKONavy,line width=2pt](0,0)--(11.5,0);\draw[AKORed,line width=5pt](8.2,0)--(11.5,0);\end{tikzpicture}
+\vfill{\small John Barraza · Universidad del Pacífico}\hfill{\small\href{https://github.com/johnbarraza/ai-04-acemoglu}{repository link}}
+\end{frame}
+
+% 2
+\begin{frame}{Roadmap: result first, then the stress test}
+\begin{columns}[T,onlytextwidth]
+\column{.32\textwidth}\begin{block}{1 · Static core}Signals, effort, Observation 1, best response.\end{block}
+\column{.32\textwidth}\begin{block}{2 · Dynamics}Propositions 1--2 and the route to collapse.\end{block}
+\column{.32\textwidth}\begin{alertblock}{3 · Audit}$\Delta_I>0$, endpoints, welfare, Lean.\end{alertblock}
+\end{columns}
+\vspace{.55cm}\Large\centering The persuasive result is the sign logic.\\The fragile result is the literal zero endpoint.
+\end{frame}
+
+% 3
+\begin{frame}{The cognitive commons}
+\begin{center}
+\begin{tikzpicture}[node distance=1.2cm,>=Latex]
+\node[draw=AKONavy,fill=AKOBluePale,rounded corners,minimum width=3.2cm,minimum height=1.1cm](e){human effort $e_t$};
+\node[draw=AKONavy,fill=AKOBluePale,rounded corners,right=of e,minimum width=3.2cm,minimum height=1.1cm](s){public signal};
+\node[draw=AKONavy,fill=AKOBluePale,rounded corners,right=of s,minimum width=3.2cm,minimum height=1.1cm](x){tomorrow's $X_{t+1}$};
+\draw[->,thick,AKONavy](e)--node[above]{externality}(s);\draw[->,thick,AKONavy](s)--(x);
+\node[draw=AKORed,fill=AKORedPale,rounded corners,below=1.15cm of s,minimum width=3.2cm,minimum height=1.1cm](ai){agentic precision $\tau_A$};
+\draw[->,thick,AKORed](ai)--node[right]{crowds out}(e);
+\end{tikzpicture}
+\end{center}
+\verdictbox{The private agent does not internalize the arrow from effort to tomorrow's public stock.}
+\paperref{Introduction and Sections 3.1--3.3.}
+\end{frame}
+
+% 4
+\begin{frame}{Within-period timing}
+\begin{center}
+\begin{tikzpicture}[node distance=.45cm,>=Latex,every node/.style={align=center}]
+\node[draw=AKONavy,fill=AKOBluePale,rounded corners,minimum width=2.25cm,minimum height=1cm](a){observe history\\choose $e$};
+\node[draw=AKONavy,fill=AKOBluePale,rounded corners,right=of a,minimum width=2.25cm,minimum height=1cm](b){receive human\\signal $s^H$};
+\node[draw=AKORed,fill=AKORedPale,rounded corners,right=of b,minimum width=2.25cm,minimum height=1cm](c){receive AI\\signal $s^A$};
+\node[draw=AKONavy,fill=AKOBluePale,rounded corners,right=of c,minimum width=2.25cm,minimum height=1cm](d){predict\\earn payoff};
+\node[draw=AKONavy,fill=AKOBluePale,rounded corners,right=of d,minimum width=2.25cm,minimum height=1cm](f){aggregate public\\signal $s^C$};
+\draw[->,AKONavy,thick](a)--(b);\draw[->,AKONavy,thick](b)--(c);\draw[->,AKONavy,thick](c)--(d);\draw[->,AKONavy,thick](d)--(f);
+\end{tikzpicture}
+\end{center}
+\vspace{.35cm}\begin{alertblock}{Commitment margin}Effort is chosen before either private signal arrives. The current agent cannot change inherited $X_t$.\end{alertblock}
+\paperref{Section 3.1, timing (i)--(v).}
+\end{frame}
+
+% 5
+\begin{frame}{Two states, three signals}
+\small
+\begin{tabular}{@{}llll@{}}\toprule
+Object & Target & Precision & Who benefits?\\\midrule
+Prior/context & $\theta_{i,t}$ & $\sigma^{-2}$ & agent $i$\\
+Human private $s^H_{i,t}$ & $\theta_{i,t}$ & $\lambda_Ie_{i,t}$ & agent $i$\\
+Agentic $s^A_{i,t}$ & $\theta_{i,t}$ & $\tau_A$ & agent $i$\\
+Community $s^C_t$ & common $\theta_t$ & $\lambda_GE_t$ & future cohorts\\\bottomrule
+\end{tabular}
+\vspace{.45cm}
+\[
+Y_{i,t}=\sigma^{-2}+\lambda_Ie_{i,t}+\tau_A,\qquad X_t=\operatorname{Var}(\theta_t\mid\mathcal I_t)^{-1}.
+\]
+\paperref{Equations (1)--(4).}
+\end{frame}
+
+% 6
+\begin{frame}{Production turns precision into success}
+\small
+\[
+f\!\left(\mathbf 1\{|x-\theta|\le1\},\mathbf 1\{|y-\theta_i|\le1\}\right),
+\quad f:\{0,1\}^2\to\mathbb R.
+\]
+\begin{columns}[T,onlytextwidth]
+\column{.48\textwidth}
+\begin{block}{Payoff increments}
+\[
+\Delta_G=f_{10}-f_{00},\quad \Delta_I=f_{01}-f_{00},
+\]
+\[
+\Delta_X=f_{11}-f_{10}-f_{01}+f_{00}.
+\]
+\end{block}
+\column{.48\textwidth}
+\begin{alertblock}{Baseline production hinge}
+\[
+\Delta_I=0,\qquad \Delta_X>0.
+\]
+Context-specific correctness has no value unless the common state is also predicted correctly.
+\end{alertblock}
+\end{columns}
+\paperref{Section 3.1, Assumption 1.}
+\end{frame}
+
+% 7
+\begin{frame}{What Assumption 1 buys}
+\begin{center}
+\resizebox{.96\linewidth}{!}{\begin{tikzpicture}[node distance=1cm,>=Latex]
+\node[draw=AKORed,fill=AKORedPale,rounded corners,text width=3cm,align=center](a){$\Delta_I=0$\\no standalone private value};
+\node[draw=AKONavy,fill=AKOBluePale,rounded corners,right=of a,text width=3cm,align=center](b){$X=0\Rightarrow$ marginal benefit of $e$ is zero};
+\node[draw=AKONavy,fill=AKOBluePale,rounded corners,right=of b,text width=3cm,align=center](c){$e(0,\tau_A)=0$};
+\node[draw=AKORed,fill=AKORedPale,rounded corners,right=of c,text width=2.5cm,align=center](d){$F(0)=0$\\collapse fixed point};
+\draw[->,thick](a)--(b);\draw[->,thick](b)--(c);\draw[->,thick](c)--(d);
+\end{tikzpicture}}
+\end{center}
+\vspace{.45cm}\Large\centering This chain is logical—but it is not robust to $\Delta_I>0$.
+\end{frame}
+
+% 8
+\begin{frame}{The agent's optimization problem}
+\small
+\[
+\max_{e\ge0}\ U(e;X,\tau_A)
+=f_{00}+G(X)\Delta_G+G(X)G(Y)\Delta_X
+-\frac{\varepsilon}{\varepsilon+1}e^{(\varepsilon+1)/\varepsilon},
+\]
+\[
+Y=\sigma^{-2}+\lambda_Ie+\tau_A,qquad
+G(z)=2\Phi(\sqrt z)-1.
+\]
+\begin{block}{What is taken as given?}$X$ is inherited; $\tau_A$ is technology; the atomistic agent ignores her infinitesimal effect on public learning.\end{block}
+\paperref{Equation (6) and Section 3.5.}
+\end{frame}
+
+% 9
+\begin{frame}{From Gaussian precision to a payoff}
+\begin{columns}[T,onlytextwidth]
+\column{.52\textwidth}
+\begin{tikzpicture}
+\begin{axis}[width=7.5cm,height=5.2cm,xlabel={precision $z$},ylabel={$G(z)$},xmin=0,xmax=8,ymin=0,ymax=1,grid=major,grid style={AKOBlueWash},axis line style={AKONavy}]
+\addplot[AKORed,very thick,smooth] coordinates {(0,0)(.1,.248)(.25,.383)(.5,.520)(1,.683)(2,.843)(3,.917)(4,.954)(6,.986)(8,.995)};
+\end{axis}
+\end{tikzpicture}
+\column{.44\textwidth}
+\[
+G(z)=\Pr(|Z|\le1),\quad Z\sim N(0,z^{-1}).
+\]
+\begin{itemize}
+\item $G'(z)=g(z)>0$;
+\item $g'(z)<0$;
+\item extra precision helps, with diminishing returns.
+\end{itemize}
+\begin{alertblock}{Boundary}$G$ is continuous at zero, but its right slope is unbounded.\end{alertblock}
+\end{columns}
+\paperref{Section 3.3.}
+\end{frame}
+
+% 10
+\begin{frame}{General knowledge complements effort}
+\small
+\[
+U_e=\Delta_XG(X)\lambda_Ig(Y)-e^{1/\varepsilon}.
+\]
+\[
+\boxed{U_{eX}=\Delta_X\lambda_Ig(X)g(Y)>0\quad\text{for }X>0.}
+\]
+\begin{center}
+\begin{tikzpicture}[>=Latex]
+\node[draw=AKONavy,fill=AKOBluePale,rounded corners](x){more $X$};
+\node[draw=AKONavy,fill=AKOBluePale,rounded corners,right=2cm of x](v){private accuracy is more valuable};
+\node[draw=AKONavy,fill=AKOBluePale,rounded corners,right=2cm of v](e){more optimal $e$};
+\draw[->,thick,AKONavy](x)--(v);\draw[->,thick,AKONavy](v)--(e);
+\end{tikzpicture}
+\end{center}
+\paperref{Observation 1, first mixed partial.}
+\end{frame}
+
+% 11
+\begin{frame}{Agentic precision substitutes for effort}
+\small
+\[
+\boxed{U_{e\tau_A}=\Delta_XG(X)\lambda_Ig'(Y)<0.}
+\]
+\begin{center}
+\begin{tikzpicture}[>=Latex]
+\node[draw=AKORed,fill=AKORedPale,rounded corners](a){more $\tau_A$};
+\node[draw=AKORed,fill=AKORedPale,rounded corners,right=1.7cm of a](y){higher $Y$};
+\node[draw=AKORed,fill=AKORedPale,rounded corners,right=1.7cm of y](g){lower $g(Y)$};
+\node[draw=AKORed,fill=AKORedPale,rounded corners,right=1.7cm of g](e){less optimal $e$};
+\draw[->,thick,AKORed](a)--(y);\draw[->,thick,AKORed](y)--(g);\draw[->,thick,AKORed](g)--(e);
+\end{tikzpicture}
+\end{center}
+\verdictbox{This is a precision-substitution result. The mathematics does not require autonomy or agency.}
+\paperref{Observation 1, second mixed partial.}
+\end{frame}
+
+% 12
+\begin{frame}{Observation 1: exact conditions}
+\small
+\begin{tabular}{@{}p{3.2cm}p{9.5cm}@{}}\toprule
+Condition & Role\\\midrule
+$X>0$, $Y>0$ & ordinary interior derivatives $g(X)$ and $g'(Y)$\\
+$\lambda_I>0$ & effort truly raises private precision\\
+$\Delta_X>0$ & success in the two dimensions is complementary\\
+$\Delta_I=0$ & baseline payoff formula and zero-effort boundary\\
+Gaussian independent errors & converts correct-prediction events to $G(X)G(Y)$\\
+$\tau_A\ge0$, $e\ge0$, $\varepsilon>0$ & feasible technology and convex cost\\\bottomrule
+\end{tabular}
+\vspace{.35cm}\begin{alertblock}{One-sentence intuition}Shared knowledge makes private learning useful; AI already supplies the same private precision that effort would buy.\end{alertblock}
+\end{frame}
+
+% 13
+\begin{frame}{A unique best response}
+\small
+\[
+\Delta_XG(X)\lambda_Ig(\sigma^{-2}+\lambda_Ie+\tau_A)=e^{1/\varepsilon}.
+\]
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=9cm,height=4.8cm,xlabel={$e$},ylabel={marginal term},xmin=0,xmax=4,ymin=0,ymax=2.6,axis line style={AKONavy},legend style={font=\scriptsize,draw=none},samples=80]
+\addplot[AKONavy,thick,domain=0:4]{1.9*exp(-.35*x)};\addlegendentry{marginal benefit}
+\addplot[AKORed,thick,domain=0:4]{x^.7};\addlegendentry{marginal cost}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\paperref{Section 3.5; schematic, not a calibration.}
+\end{frame}
+
+% 14
+\begin{frame}{Observation 2: optimizer comparative statics}
+\begin{columns}[T,onlytextwidth]
+\column{.48\textwidth}\begin{block}{Raise inherited $X$}$U_{eX}>0$ shifts marginal benefit upward, so $e(X,\tau_A)$ rises.\end{block}
+\column{.48\textwidth}\begin{alertblock}{Raise agentic $\tau_A$}$U_{e\tau_A}<0$ shifts marginal benefit downward, so $e(X,\tau_A)$ falls.\end{alertblock}
+\end{columns}
+\vspace{.55cm}
+\[
+X_2>X_1>0\Rightarrow e(X_2,\tau_A)>e(X_1,\tau_A),
+\]
+\[
+\tau'_A>\tau_A\Rightarrow e(X,\tau'_A)<e(X,\tau_A)\quad(X>0).
+\]
+\paperref{Observation 2, Topkis/strict single-crossing logic.}
+\end{frame}
+
+% 15
+\begin{frame}{The Kalman law of motion}
+\small
+\[
+E_t=Ie_t,\qquad
+X_{t+1}=\left[\Sigma^2+(X_t+\lambda_GE_t)^{-1}\right]^{-1}.
+\]
+\begin{center}
+\begin{tikzpicture}[node distance=.7cm,>=Latex]
+\node[draw=AKONavy,fill=AKOBluePale,rounded corners](x){$X_t$};
+\node[draw=AKONavy,fill=AKOBluePale,rounded corners,right=of x](e){$e(X_t,\tau_A)$};
+\node[draw=AKONavy,fill=AKOBluePale,rounded corners,right=of e](p){$X_t+\lambda_GIe_t$};
+\node[draw=AKORed,fill=AKORedPale,rounded corners,right=of p](d){add drift $\Sigma^2$};
+\node[draw=AKONavy,fill=AKOBluePale,rounded corners,right=of d](n){$X_{t+1}$};
+\draw[->,thick](x)--(e);\draw[->,thick](e)--(p);\draw[->,thick](p)--(d);\draw[->,thick](d)--(n);
+\end{tikzpicture}
+\end{center}
+\paperref{Equations (2), (3), and symmetric equilibrium.}
+\end{frame}
+
+% 16
+\begin{frame}{Proposition 1: dynamic equilibrium}
+\small
+\begin{block}{Exact selected statement}
+Fix $X_1\ge0$ implied by the prior. There exists a unique symmetric Perfect Bayesian equilibrium path with $e_{i,t}=e_t\ge0$, where
+\[
+e_t=e(X_t,\tau_A),\qquad
+X_{t+1}=\left[\Sigma^2+(X_t+\lambda_GIe_t)^{-1}\right]^{-1}.
+\]
+\end{block}
+\textbf{Conditions doing the work:} atomistic agents, equal-sized islands, Gaussian signals, unique static best response, common parameters, and a fixed AI precision.
+\paperref{Proposition 1, equation (7).}
+\end{frame}
+
+% 17
+\begin{frame}{The one-dimensional transition map}
+\small
+\[
+F(X;I,\tau_A)=\left[\Sigma^2+\left\{X+\lambda_GIe(X,\tau_A)\right\}^{-1}\right]^{-1}.
+\]
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8.8cm,height=4.8cm,xlabel={$X_t$},ylabel={$X_{t+1}$},xmin=0,xmax=1,ymin=0,ymax=1,axis line style={AKONavy},ticks=none]
+\addplot[AKONavy,dashed,domain=0:1]{x};
+\addplot[AKORed,very thick,domain=0:1]{.78*(1-exp(-3*x))};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\paperref{Equation (8); schematic only.}
+\end{frame}
+
+% 18
+\begin{frame}{Proposition 2: comparative statics of $F$}
+\small
+\begin{block}{Statement}$F$ is pointwise increasing in aggregation scale $I$ and pointwise decreasing in agentic precision $\tau_A$, strictly for all $X>0$.\end{block}
+\begin{columns}[T,onlytextwidth]
+\column{.48\textwidth}
+\[
+I\uparrow\Rightarrow Ie(X,\tau_A)\uparrow\Rightarrow F(X)\uparrow.
+\]
+\column{.48\textwidth}
+\[
+\tau_A\uparrow\Rightarrow e(X,\tau_A)\downarrow\Rightarrow F(X)\downarrow.
+\]
+\end{columns}
+\vspace{.25cm}\verdictbox{This proposition orders tomorrow's public precision. It does not alone establish welfare loss or global collapse.}
+\paperref{Proposition 2, p. 17.}
+\end{frame}
+
+% 19
+\begin{frame}{Why the number four appears}
+\small
+Near $X=0$, the model compares
+\[
+e(X,\tau_A)=\Theta(X^{\varepsilon/2})
+\qquad\text{with}\qquad
+e_{\mathrm{maint}}(X)=\Theta(X^2).
+\]
+\begin{columns}[T,onlytextwidth]
+\column{.48\textwidth}\begin{block}{$\varepsilon<4$}$\varepsilon/2<2$: chosen effort vanishes more slowly; zero is locally unstable.\end{block}
+\column{.48\textwidth}\begin{alertblock}{$\varepsilon>4$}$\varepsilon/2>2$: chosen effort vanishes faster; zero is locally stable.\end{alertblock}
+\end{columns}
+\paperref{Lemma 2 and discussion, pp. 17--18.}
+\end{frame}
+
+% 20
+\begin{frame}{Robust-learning regime: $\varepsilon<4$}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=9cm,height=5cm,xlabel={$X$},ylabel={$F(X)$},xmin=0,xmax=1,ymin=0,ymax=1,axis line style={AKONavy},ticks=none]
+\addplot[AKONavy,dashed,domain=0:1]{x};
+\addplot[AKORed,very thick,domain=0:1]{.85*sqrt(x)};
+\addplot[only marks,mark=*,AKORed] coordinates {(0,0) (.7225,.7225)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\small Proposition 3: exactly two steady states, $0=\bar X_\ell<\bar X_h$; zero is unstable, $\bar X_h$ stable, and every $X_1>0$ converges to $\bar X_h$.
+\paperref{Proposition 3; schematic only.}
+\end{frame}
+
+% 21
+\begin{frame}{Collapse regime: $\varepsilon>4$}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=9cm,height=5cm,xlabel={$X$},ylabel={$F(X)$},xmin=0,xmax=1,ymin=0,ymax=1,axis line style={AKONavy},ticks=none]
+\addplot[AKONavy,dashed,domain=0:1]{x};
+\addplot[AKORed,very thick,smooth] coordinates {(0,0)(.12,.04)(.3,.38)(.55,.65)(.85,.72)(1,.73)};
+\addplot[only marks,mark=*,AKORed] coordinates {(0,0)(.22,.22)(.7,.7)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\small If $\tau_A<\tau_A^c$, low and high steady states coexist around an unstable threshold; if $\tau_A>\tau_A^c$, only zero remains. The proposition does not state the equality case.
+\paperref{Proposition 5 and Figure 2; schematic only.}
+\end{frame}
+
+% 22
+\begin{frame}{Is welfare increasing in AI accuracy?}
+\small
+\[
+\frac{\partial\bar U^+}{\partial\tau_A}=
+\underbrace{g(\bar Y_h)G(\bar X_h)\Delta_X}_{\text{direct gain }\ge0}
++\underbrace{\frac{\partial G(\bar X_h)}{\partial\tau_A}
+[\Delta_G+G(\bar Y_h)\Delta_X]}_{\text{dynamic loss }\le0}.
+\]
+\begin{alertblock}{Answer}Not unconditionally. Single-peakedness needs $\sigma^{-2}\ge\sqrt2-1$ (Assumption 2) and the appropriate high-knowledge steady state; with $\varepsilon>4$, basin selection is an additional channel.\end{alertblock}
+\paperref{Section 4.3, Assumption 2, Propositions 10--11.}
+\end{frame}
+
+% 23
+\begin{frame}{What the authors relax in Section 5}
+\small
+\begin{tabular}{@{}p{3.1cm}p{4.6cm}p{5.2cm}@{}}\toprule
+Extension & Change & What survives\\\midrule
+AI aggregation & $I(\tau_A)=I_0+e^{\eta\tau_A}$ & collapse force if $\eta<\varepsilon/2$\\
+Synthetic data & add public precision $\tau_{syn}$ & zero becomes a positive floor\\
+Effort separability & public input $e^\beta$ & cutoff changes to $\varepsilon<4/\beta$\\\midrule
+Never relaxed & $\Delta_I=0$ & literal zero-collapse hinge\\\bottomrule
+\end{tabular}
+\paperref{Sections 5.1--5.3, Propositions 14--16.}
+\end{frame}
+
+% 24
+\begin{frame}{New extension: give private knowledge standalone value}
+\small
+\[
+\Delta_I>0\Rightarrow
+U_e=\lambda_Ig(Y)[\Delta_I+G(X)\Delta_X]-e^{1/\varepsilon}.
+\]
+\begin{center}
+\begin{tikzpicture}[node distance=1cm,>=Latex]
+\node[draw=AKORed,fill=AKORedPale,rounded corners](a){$X=0$};
+\node[draw=AKONavy,fill=AKOBluePale,rounded corners,right=of a](b){$U_e(0)>0$};
+\node[draw=AKONavy,fill=AKOBluePale,rounded corners,right=of b](c){$e(0,\tau_A)>0$};
+\node[draw=AKORed,fill=AKORedPale,rounded corners,right=of c](d){$F(0)>0$};
+\draw[->,thick](a)--(b);\draw[->,thick](b)--(c);\draw[->,thick](c)--(d);
+\end{tikzpicture}
+\end{center}
+\verdictbox{A low-knowledge trap may remain, but exact zero is not a fixed point. This is a production-side robustness failure, not a numerical curiosity.}
+\end{frame}
+
+% 25
+\begin{frame}[fragile]{Lean: what is actually verified}
+\small
+\begin{columns}[T,onlytextwidth]
+\column{.47\textwidth}
+\textbf{Mathematical claim}
+\[
+\Delta_I>0,\ \lambda_I>0,\ g(Y)>0
+\Rightarrow \lambda_Ig(Y)\Delta_I>0.
+\]
+At $e=X=0$, the marginal benefit is positive; a zero-effort optimizer is impossible under the paper's monotone marginal structure.
+\column{.49\textwidth}
+\textbf{Lean boundary}
+\begin{lstlisting}
+theorem positiveStandaloneReturn
+    (hDI : 0 < deltaI)
+    (hLI : 0 < lambdaI)
+    (hg  : 0 < gY) :
+    0 < lambdaI * gY * deltaI := by
+  positivity
+\end{lstlisting}
+\begin{block}{Interpretation}Lean verifies the ordered-ring implication. EconCSLib separately audits whether this statement faithfully represents the paper and extension.\end{block}
+\end{columns}
+\paperref{Repository `lean/`; final theorem name may follow the generated interface.}
+\end{frame}
+
+% 26
+\begin{frame}{Takeaways: what survives the audit}
+\begin{columns}[T,onlytextwidth]
+\column{.48\textwidth}
+\begin{block}{I believe}
+\begin{itemize}
+\item the static mixed-partial signs on $X>0$;
+\item the pointwise transition-map comparisons;
+\item the externality as a coherent cautionary mechanism.
+\end{itemize}
+\end{block}
+\column{.48\textwidth}
+\begin{alertblock}{I qualify}
+\begin{itemize}
+\item “agentic” is interpretation, not needed for the sign;
+\item literal collapse relies on $\Delta_I=0$;
+\item welfare needs Assumption 2 and equilibrium selection;
+\item $X=0$ and $\tau_A=\tau_A^c$ require explicit endpoint treatment.
+\end{itemize}
+\end{alertblock}
+\end{columns}
+\vspace{.35cm}\Large\centering The robust message is a \alert{low-knowledge trap},\\not an unconditional theorem that better AI destroys knowledge.
+\end{frame}
+
+\end{document}

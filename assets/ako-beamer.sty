@@ -1,0 +1,34 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{assets/ako-beamer}[2026/09/06 Shared AKO Beamer style]
+\RequirePackage{amsmath,amssymb,booktabs,array,graphicx,tikz,pgfplots,listings,ragged2e}
+\usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric}
+\pgfplotsset{compat=1.18}
+\definecolor{AKONavy}{HTML}{0C2852}
+\definecolor{AKORed}{HTML}{982A34}
+\definecolor{AKOGraphite}{HTML}{333333}
+\definecolor{AKORedWash}{HTML}{F4E8EA}
+\definecolor{AKORedPale}{HTML}{F9F5F5}
+\definecolor{AKOBlueWash}{HTML}{EBEEF1}
+\definecolor{AKOBluePale}{HTML}{F5F6F8}
+\IfFontExistsTF{Avenir Next}{\setsansfont{Avenir Next}}{\setsansfont{TeX Gyre Heros}}
+\setbeamercolor{normal text}{fg=AKOGraphite,bg=white}
+\setbeamercolor{structure}{fg=AKORed}
+\setbeamercolor{frametitle}{fg=white,bg=AKONavy}
+\setbeamercolor{title}{fg=AKONavy}
+\setbeamercolor{alerted text}{fg=AKORed}
+\setbeamercolor{block title}{fg=white,bg=AKONavy}
+\setbeamercolor{block body}{fg=AKOGraphite,bg=AKOBluePale}
+\setbeamercolor{block title alerted}{fg=white,bg=AKORed}
+\setbeamercolor{block body alerted}{fg=AKOGraphite,bg=AKORedPale}
+\setbeamerfont{title}{series=\bfseries,size=\LARGE}
+\setbeamerfont{frametitle}{series=\bfseries,size=\large}
+\setbeamertemplate{navigation symbols}{}
+\setbeamersize{text margin left=.65cm,text margin right=.65cm}
+\setbeamertemplate{itemize item}{\color{AKORed}\raise.15ex\hbox{\scriptsize$\blacktriangleright$}}
+\setbeamertemplate{frametitle}{\nointerlineskip\begin{beamercolorbox}[wd=\paperwidth,ht=3.15ex,dp=1.25ex,leftskip=.65cm]{frametitle}\insertframetitle\end{beamercolorbox}\vspace{.08cm}\hspace{.65cm}\color{AKORed}\rule{2.1cm}{1.5pt}}
+\setbeamertemplate{footline}{\leavevmode\hbox{\begin{beamercolorbox}[wd=.86\paperwidth,ht=2.45ex,dp=.9ex,leftskip=.65cm]{author in head/foot}\color{AKONavy!65}Acemoglu--Kong--Ozdaglar (2026) · model audit\end{beamercolorbox}\begin{beamercolorbox}[wd=.14\paperwidth,ht=2.45ex,dp=.9ex,center]{date in head/foot}\color{AKONavy}\insertframenumber/\inserttotalframenumber\end{beamercolorbox}}}
+\newcommand{\paperref}[1]{\vfill{\color{AKONavy!62}\tiny Source: #1\par}}
+\newcommand{\tagpill}[1]{\tikz[baseline=(n.base)]\node[fill=AKOBlueWash,rounded corners=2pt,inner xsep=5pt,inner ysep=2pt,text=AKONavy,font=\scriptsize\bfseries] (n) {#1};}
+\newcommand{\verdictbox}[1]{\begin{alertblock}{Verdict}#1\end{alertblock}}
+\lstdefinelanguage{Lean}{morekeywords={def,theorem,lemma,by,intro,have,exact,simpa,linarith,nlinarith,positivity,constructor,calc},sensitive=true,morecomment=[l]{--}}
+\lstset{language=Lean,basicstyle=\ttfamily\scriptsize,keywordstyle=\color{AKORed}\bfseries,commentstyle=\color{AKONavy!55},showstringspaces=false,columns=fullflexible,keepspaces=true,breaklines=true}

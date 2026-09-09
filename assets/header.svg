@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">AI, Human Cognition and Knowledge Collapse</title>
+  <desc id="desc">A navy academic banner showing human effort feeding a shared knowledge stock while agentic AI crowds effort out.</desc>
+  <rect width="1200" height="300" fill="#0C2852"/>
+  <path d="M0 256 C220 180 350 270 570 185 S930 85 1200 150 V300 H0Z" fill="#EBEEF1" opacity=".16"/>
+  <path d="M0 278 C250 220 430 292 650 220 S980 145 1200 205 V300 H0Z" fill="#982A34" opacity=".72"/>
+  <g fill="none" stroke="#F5F6F8" stroke-width="4" opacity=".92">
+    <circle cx="965" cy="92" r="34"/><circle cx="1060" cy="146" r="25"/><circle cx="978" cy="208" r="29"/>
+    <path d="M994 106l43 25M1040 161l-38 30M965 126l8 53"/>
+  </g>
+  <text x="64" y="78" fill="#D9E2EC" font-family="Arial, sans-serif" font-size="24" letter-spacing="3">REPOSITORY 04 · AI ECONOMIC MODELLING</text>
+  <text x="64" y="142" fill="white" font-family="Arial, sans-serif" font-size="48" font-weight="700">AI, Human Cognition</text>
+  <text x="64" y="198" fill="white" font-family="Arial, sans-serif" font-size="48" font-weight="700">and Knowledge Collapse</text>
+  <text x="66" y="242" fill="#F4E8EA" font-family="Arial, sans-serif" font-size="24">Acemoglu · Kong · Ozdaglar (2026) — model audit and Lean check</text>
+</svg>
