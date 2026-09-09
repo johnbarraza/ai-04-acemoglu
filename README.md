@@ -96,7 +96,9 @@ ai-04-acemoglu/
 ├── extra/
 │   └── presentation-long.tex/.pdf   # 26-frame extension deck
 ├── hand/
-│   └── README.md                    # add derivation.jpg before submission
+│   ├── derivation.png               # image displayed in the short deck
+│   ├── repo4_modelamineto_hand.pdf  # original handwritten page
+│   └── README.md
 ├── lean/                            # complete EconCSLib run output
 ├── paper/
 │   ├── README.md
@@ -108,7 +110,7 @@ ai-04-acemoglu/
 └── LICENSE.md
 ```
 
-Before submission, add your own handwritten photo as `hand/derivation.jpg`; the deck deliberately shows a placeholder until that evidence exists.
+The handwritten audit is included in [`hand/`](hand/): the original PDF is preserved and a PNG rendering appears on the final slide.
 
 The EconCSLib contribution is being completed under `lean/`. Its status is not
 reported as verified until the course checker succeeds; see [lean/README.md](lean/README.md).

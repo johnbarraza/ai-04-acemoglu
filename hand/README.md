@@ -1,5 +1,7 @@
 # Hand derivation
 
-Add your own photo as `derivation.jpg` before submission. It should show, at minimum, the mixed-partial calculation in Observation 1 and the extension with `Delta_I > 0` at `X = 0`.
+- `repo4_modelamineto_hand.pdf`: original one-page handwritten derivation.
+- `derivation.png`: rendered copy used on the final slide of the short Beamer deck.
 
-The Beamer source detects this filename automatically. Until the photo is added, the last slide displays an explicit placeholder rather than presenting generated work as handwritten evidence.
+The calculation tests whether the zero-knowledge fixed point survives when
+standalone implementation gains satisfy `Delta_I > 0`.
