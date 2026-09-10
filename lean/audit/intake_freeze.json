@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "paper": "AKO26KnowledgeCollapse",
+  "acceptance_credential": false,
+  "future_paper_intake_only": true,
+  "state": "draft",
+  "inventory_scope": "complete named theoretical source surface",
+  "inventory_complete": false,
+  "source_item_identity": "source-location+normalized-statement-sha256-v1",
+  "source_artifact_path": "papers/AKO26KnowledgeCollapse/source-audited.pdf",
+  "source_artifact_sha256": "63e37f2af463422e587c9bd81cda3bb555404a6ad65763aca0f9bebb8e2d4ec6",
+  "source_version": "May 5, 2026",
+  "source_text_artifact": null,
+  "items": [
+    {
+      "source_item": "Observation 1",
+      "source_location": "Section 3.4, pp. 13–14, Observation 1 and displayed derivatives",
+      "source_statement_sha256": "797a33f6abbe2c70dd47680021ce655dbde0427c7abbe4fcb9e61359795d533f",
+      "source_kind": "claim",
+      "spec_declaration": "observation1_public_complements_ai_substitutesSpec",
+      "proof_declaration": "observation1_public_complements_ai_substitutes",
+      "dependency_order": 1,
+      "depends_on_source_items": [],
+      "owner": "unassigned",
+      "source_atoms": [],
+      "acceptance_conditions": [
+        "all exact source atoms are byte-pinned and semantically complete",
+        "the transparent Spec is equivalent to the full source target",
+        "every visible premise has source or checked derivation provenance",
+        "the proof closes without paper-local placeholders"
+      ]
+    }
+  ],
+  "seal_requirements": {
+    "state": "sealed",
+    "inventory_complete": true,
+    "every_item_has_owner": true,
+    "dependency_order_is_total": true,
+    "every_source_atom_has_locator_exact_byte_slice_quote_and_sha256": true,
+    "pdf_atoms_use_pinned_normalized_source_text_receipt": true
+  }
+}

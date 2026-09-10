@@ -14,14 +14,14 @@
 <p align="center">
   <img alt="LaTeX" src="https://img.shields.io/badge/LaTeX-008080?logo=latex&logoColor=white">
   <img alt="Beamer" src="https://img.shields.io/badge/Beamer-0C2852">
-  <img alt="Lean 4" src="https://img.shields.io/badge/Lean_4-audit_pending-982A34">
+  <img alt="Lean 4" src="https://img.shields.io/badge/Lean_4-partially_formalized-982A34">
   <img alt="EconCSLib" src="https://img.shields.io/badge/EconCSLib-v4.30.0--rc2-0C2852">
   <img alt="GitHub" src="https://img.shields.io/badge/GitHub-repository-181717?logo=github">
 </p>
 
 # AI, Human Cognition and Knowledge Collapse
 
-**Daron Acemoglu, Dingwen Kong, and Asuman Ozdaglar (2026).** NBER Working Paper 34910, version dated May 5, 2026. It is an **unrefereed NBER working paper**, not an arXiv paper.
+**Daron Acemoglu, Weihao Kong, and Asuman Ozdaglar (2026).** NBER Working Paper 34910, version dated May 5, 2026. It is an **unrefereed NBER working paper**, not an arXiv paper.
 
 ## Question and mechanism
 
@@ -112,9 +112,12 @@ ai-04-acemoglu/
 
 The handwritten audit is included in [`hand/`](hand/): the original PDF is preserved and a PNG rendering appears on the final slide.
 
-The EconCSLib contribution is being completed under `lean/`. Its status is not
-reported as verified until the course checker succeeds; see [lean/README.md](lean/README.md).
+The complete EconCSLib contribution is under [`lean/`](lean/). Its honest
+status is **partially formalized**: Observation 1 has an exact-type proof with
+no `sorry`, while the full dynamic collapse result and the v11 source-semantic
+closeout remain outside the claim. The robustness objection is a separate
+original theorem in [`OriginalExtension.lean`](lean/OriginalExtension.lean).
 
 ## Citation
 
-Acemoglu, D., Kong, D., & Ozdaglar, A. (2026). *AI, Human Cognition and Knowledge Collapse*. NBER Working Paper 34910. <https://doi.org/10.3386/w34910>.
+Acemoglu, D., Kong, W., & Ozdaglar, A. (2026). *AI, Human Cognition and Knowledge Collapse*. NBER Working Paper 34910. <https://doi.org/10.3386/w34910>.
