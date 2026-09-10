@@ -1,0 +1,2 @@
+import AKO26KnowledgeCollapse.ProofInterface
+import AKO26KnowledgeCollapse.OriginalExtension

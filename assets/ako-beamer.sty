@@ -10,7 +10,8 @@
 \definecolor{AKORedPale}{HTML}{F9F5F5}
 \definecolor{AKOBlueWash}{HTML}{EBEEF1}
 \definecolor{AKOBluePale}{HTML}{F5F6F8}
-\IfFontExistsTF{Avenir Next}{\setsansfont{Avenir Next}}{\setsansfont{TeX Gyre Heros}}
+\IfFontExistsTF{Avenir Next}{\setsansfont{Avenir Next}}{%
+  \IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{}}
 \setbeamercolor{normal text}{fg=AKOGraphite,bg=white}
 \setbeamercolor{structure}{fg=AKORed}
 \setbeamercolor{frametitle}{fg=white,bg=AKONavy}

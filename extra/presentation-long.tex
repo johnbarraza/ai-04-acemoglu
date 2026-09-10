@@ -416,7 +416,7 @@ At $e=X=0$, the marginal benefit is positive; a zero-effort optimizer is impossi
 \column{.49\textwidth}
 \textbf{Lean boundary}
 \begin{lstlisting}
-theorem positiveStandaloneReturn
+theorem positive_standalone_return_at_zero
     (hDI : 0 < deltaI)
     (hLI : 0 < lambdaI)
     (hg  : 0 < gY) :
@@ -425,7 +425,7 @@ theorem positiveStandaloneReturn
 \end{lstlisting}
 \begin{block}{Interpretation}Lean verifies the ordered-ring implication. EconCSLib separately audits whether this statement faithfully represents the paper and extension.\end{block}
 \end{columns}
-\paperref{Repository `lean/`; final theorem name may follow the generated interface.}
+\paperref{Repository \texttt{lean/OriginalExtension.lean}; original extension, not a paper-attributed theorem.}
 \end{frame}
 
 % 26

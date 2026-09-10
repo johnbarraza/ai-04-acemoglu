@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "paper": "AKO26KnowledgeCollapse",
+  "source_url": "https://economics.mit.edu/people/faculty/daron-acemoglu/research",
+  "source_version": "May 5, 2026",
+  "source_artifact_path": "papers/AKO26KnowledgeCollapse/source-audited.pdf",
+  "source_artifact_sha256": "63e37f2af463422e587c9bd81cda3bb555404a6ad65763aca0f9bebb8e2d4ec6",
+  "source_inventory_kind": "pinned_statement_target_scaffold",
+  "source_curated": false,
+  "seed_scaffold": true,
+  "source_coverage_mode": "named_theoretical_statements",
+  "semantic_contract_policy": {
+    "schema": 1,
+    "activation": "Before Lean drafting, independently inventory every material source atom against exact pinned source quote bytes; do not infer that inventory from declaration, binder, field, or function names. After a source item has an audited paper-local specification and a theorem/lemma proving or refuting it, add top-level semantic_contract_schema: 1, classify every item with an explicit claim_bearing Boolean, and record semantic_contract for each true item. At formalized closeout, also add source_claim_atoms_schema: 1 and source_spec_correspondence_schema: 1. Bind each atom to an elaborated Spec component and account for every material Lean-closure terminal, including proof and instance arguments, by source atom, approved source correction/additional assumption, checked Lean derivation, or version-pinned foundation basis. Each statement-first row supplies an inactive semantic_contract_template pairing its transparent `...Spec : Prop` with its theorem/lemma. Promote that exact template only after the independent source audit passes, the theorem has exactly the transparent Spec type, the closure record passes, and the proof hole is replaced. Do not manufacture a contract from the temporary by-sorry statement skeleton alone. Legacy v10 evidence remains readable but is not a v11 realization credential. For a source-game result whose feasible-action equilibrium comparison uses a conditional/posterior or observation-contingent value, add the separately byte-pinned `semantic_context_requirements` kind `strategic_observation_totality`; it requires an explicit off-path/zero-probability totality audit and cannot be satisfied by a Lean-only default value.",
+    "required_fields": [
+      "spec_declaration",
+      "evidence_declaration",
+      "evidence_mode",
+      "semantic_shape"
+    ],
+    "evidence_modes": [
+      "proves",
+      "refutes"
+    ],
+    "semantic_shapes": [
+      "plain"
+    ],
+    "shape_policy": "Only plain exact-proposition contracts are currently enforced. Do not record a specialized runtime, preprocessing, or refinement shape until the audit implements its structural check.",
+    "source_defect_routing": "Every repaired_in_lean source-proof defect must be linked from a successfully checked contract item through source_defect_ids."
+  },
+  "items": {
+    "observation1_public_complements_ai_substitutes": {
+      "statement": "Under Assumption 1 (Δ_I = 0 and Δ_X > 0), public precision X_t complements human effort while agentic-AI precision τ_A substitutes for human effort: ∂²U/(∂e∂X_t) = Δ_X λ_I g(X_t)g(Y_i,t) > 0 and ∂²U/(∂e∂τ_A) = Δ_X G(X_t)λ_I g′(Y_i,t) < 0, for the interior domain X_t > 0.",
+      "source_item": "Observation 1",
+      "source_kind": "claim",
+      "source_location": "Section 3.4, pp. 13–14, Observation 1 and displayed derivatives",
+      "source_url": "https://economics.mit.edu/people/faculty/daron-acemoglu/research",
+      "source_status": "pinned statement-spec transcription; independent source audit pending",
+      "spec_lean_declarations": [
+        "observation1_public_complements_ai_substitutesSpec"
+      ],
+      "proof_lean_declarations": [
+        "observation1_public_complements_ai_substitutes"
+      ],
+      "semantic_contract_template": {
+        "spec_declaration": "observation1_public_complements_ai_substitutesSpec",
+        "evidence_declaration": "observation1_public_complements_ai_substitutes",
+        "evidence_mode": "proves",
+        "semantic_shape": "plain"
+      }
+    }
+  }
+}

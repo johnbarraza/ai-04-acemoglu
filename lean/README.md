@@ -1,16 +1,17 @@
-# Lean formalization status
+<!-- BEGIN GENERATED PAPER FOLDER README -->
+# AI, Human Cognition and Knowledge Collapse
 
-Target: `AKO26KnowledgeCollapse` using Lean 4.30.0-rc2 and EconCSLib.
+| Field | Value |
+|---|---|
+| Final status | Partially formalized |
+| Paper reference | AI, Human Cognition and Knowledge Collapse by Daron Acemoglu; Weihao Kong; Asuman Ozdaglar; May 5, 2026. |
+| Lines of Code | 239 |
 
-The intended source-facing scope is Observation 1, Observation 2, and
-Propositions 1–2. The result with `Δ_I > 0` is an original extension and must
-remain outside the paper-attributed theorem surface.
+## Key Links
 
-The complete generated EconCSLib folder will replace this status file after it
-passes:
-
-```bash
-python3 scripts/paper_contribution.py check AKO26KnowledgeCollapse --fast
-```
-
-No successful validation is claimed in the current public snapshot.
+- Final validation report: [FINAL_VALIDATION_REPORT.md](FINAL_VALIDATION_REPORT.md)
+- Dependency DAG: [DependencyDAG.tex](docs/DependencyDAG.tex)
+- Compact Lean interface: [PaperInterface.lean](PaperInterface.lean)
+- Source/status JSON: [status.json](status.json); [paper statement map](audit/paper_statement_map.json); [paper coverage audit](audit/paper_coverage_llm.json); [defect support audit](audit/defect_support_match_llm.json); [statement match audit](audit/statement_match_llm.json).
+- Additional documentation: [FORMALIZATION_NOTES.md](docs/FORMALIZATION_NOTES.md)
+<!-- END GENERATED PAPER FOLDER README -->
